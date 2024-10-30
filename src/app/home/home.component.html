@@ -1,0 +1,100 @@
+
+<div class="content search-news mt-4">
+  <div *ngIf="filteredNewsList.length > 0;">
+    <div class="news-list">
+      <h4>Editor's Pick</h4>
+      <div class="row">
+        <div *ngFor="let news of filteredNewsList" class="col-md-6">
+            <div class="article-card">
+              <img src="{{news.urlToImage}}" class="article-image" alt="">
+              <div>
+                <div class="article-title"><a href="{{news.url}}" target="_blank"><h6>{{news.title}}</h6></a></div>
+
+                <div class="article-description">
+                  <p>{{news.description}}</p>
+                </div>
+                <p>{{news.publishedAt | date:'MMM yyyy'}}</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="news-all mt-5" *ngIf="filteredNewsList.length == 0;">
+  <div class="row">
+    <div class="col carousel-col">
+      <div id="trendNewsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div *ngFor="let article of trend; let i = index" class="carousel-item" [class.active]="i === 0">
+            <img [src]="article.urlToImage" class="d-block w-100" alt="{{ article.title }}">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>{{ article.title }}</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#trendNewsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Önceki</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#trendNewsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Sonraki</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="trends">
+        <div class="trend-news">
+          <div *ngIf="trend2">
+            <div class="news-list">
+              <h4>TREND</h4>
+              <div>
+                <div *ngFor="let article of trend2">
+                    <div class="article-card">
+                      <img width="160" src="{{article.urlToImage}}" class="article me-2" alt="">
+                      <div>
+                        <div class="article-title"><a href="{{article.url}}" target="_blank"><h6>{{article.title}}</h6></a></div>
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content mt-4">
+    <div *ngIf="news">
+      <div class="news-list">
+        <h4>Editor's Pick</h4>
+        <div class="row mt-4">
+          <div *ngFor="let article of news.articles" class="col-md-6">
+              <div class="article-card">
+                <img src="{{article.urlToImage}}" class="article-image" alt="">
+                <div>
+                  <div class="article-title"><a href="{{article.url}}" target="_blank"><h6>{{article.title}}</h6></a></div>
+
+                  <div class="article-description">
+                    <p>{{article.description}}</p>
+                  </div>
+                  <p>{{article.publishedAt | date:'MMM yyyy'}}</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <ng-container *ngFor="let page of pageNumbers">
+          <button class="btn btn-light" (click)="changePage(page)" [class.active]="currentPage === page">{{ page }}</button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+

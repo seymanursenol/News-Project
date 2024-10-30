@@ -1,0 +1,48 @@
+
+
+<div class="Content row">
+  <div class="category-group col-md-3">
+    <h3>News Sources</h3>
+    <div class="input-group">
+      <div class="list-group" *ngIf="newsSources.length > 0">
+        <ul>
+          <li *ngFor="let source of newsSources">
+            <input type="checkbox" [(ngModel)]="source.selected"> {{ source.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button class="btn btn-primary filter" (click)="applyFilter()">Filter</button>
+
+  </div>
+  <div class="news-all col">
+    <div class="content">
+      <div *ngIf="news">
+        <div class="news-list mt-5">
+          <div class="row">
+            <div *ngFor="let article of news?.articles" class="col-md-6">
+              <div class="article-card">
+                <img src="{{article.urlToImage}}" class="article-image" alt="">
+                <div>
+                  {{article.source.name}}
+                  <div class="article-title">
+                    <a href="{{article.url}}" target="_blank"><h6>{{article.title}}</h6></a>
+                  </div>
+                  <div class="article-description">
+                    <p>{{article.description}}</p>
+                  </div>
+                  <p>{{article.publishedAt | date:'MMM yyyy'}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+          <ng-container *ngFor="let page of pageNumbers">
+            <button class="btn btn-light" (click)="changePage(page)" [class.active]="currentPage === page">{{ page }}</button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

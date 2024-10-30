@@ -1,0 +1,71 @@
+.news-all{
+  width: 65%;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+p{
+  font-size: 10px;
+  color: rgb(117, 117, 117);
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.article-card {
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  height: 60%;
+}
+
+.article-image {
+  width: 180px;
+  height: auto;
+  margin-right: 10px;
+}
+.article-description {
+  flex: 1;
+  height: auto;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+}
+.article-title {
+  flex: 1;
+  height: auto;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+.carousel-col{
+  background-color: rgba(226, 226, 226, 0.314);
+}
+.carousel{
+  margin-top: 13%;
+  margin-bottom: 13%;
+}
+.carousel-item img {
+  max-height: 400px; /* Resim yüksekliğini ayarlayın */
+  object-fit: cover; /* Resmin boyutunu kapsaması için */
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* Altyazı için yarı saydam arka plan */
+  padding: 10px; /* Altyazı için iç boşluk */
+}
+.carousel-item img {
+  max-height: 400px; /* Resim yüksekliğini ayarlayın */
+  object-fit: cover; /* Resmin boyutlandırma şekli */
+}
+.search-news{
+  width: 60%;
+  margin: auto;
+}

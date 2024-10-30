@@ -1,0 +1,59 @@
+
+<div class="header">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Şeyma Nur Şenol</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" name="searchInput" [(ngModel)]="searchTerm" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" (click)="searchNews()">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a id="home" class="nav-link active" (click)="logId($event)" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a id="about" class="nav-link active" (click)="logId($event)" aria-current="page" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a id="business" class="nav-link active" (click)="logId($event)" aria-current="page" href="/business">Business</a>
+          </li>
+          <li class="nav-item">
+            <a id="entertainment" class="nav-link active" (click)="logId($event)" aria-current="page" href="/entertainment">Entertainment</a>
+          </li>
+          <li class="nav-item">
+            <a id="general" class="nav-link active" (click)="logId($event)" aria-current="page" href="/general">General</a>
+          </li>
+          <li class="nav-item">
+            <a id="health" class="nav-link active" (click)="logId($event)" aria-current="page" href="/health">Health</a>
+          </li>
+          <li class="nav-item">
+            <a id="science" class="nav-link active" (click)="logId($event)" aria-current="page" href="/science">Science</a>
+          </li>
+          <li class="nav-item">
+            <a id="sport" class="nav-link active" (click)="logId($event)" aria-current="page" href="/sports">Sport</a>
+          </li>
+          <li class="nav-item">
+            <a id="technology" class="nav-link active" (click)="logId($event)" aria-current="page" href="/technology">Technology</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+</div>
